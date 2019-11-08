@@ -1,0 +1,14 @@
+class Task1Exception extends Exception {
+    public String msg;
+    public Task1Exception ( String _msg ) { msg = _msg; } }
+
+interface Matrix2D {
+    public int initialState ();
+    public int terminalState ();
+    public int nextState ( int currentState, int character ); }
+
+interface Language {
+    public Boolean decide ( int [] input ) throws Task1Exception; }
+
+class Task1 {
+    public static Language create ( Matrix2D matrix2D ) { return Language.decide(matrix2D); } }
